@@ -23,7 +23,7 @@ body{
     overflow: hidden;
     border-radius: 18px;
     font-family: 'REM', sans-serif;
-    transition: 0.6s, ease-out;
+    transition: 0.6s ease-out;
 }
 
 .search-box{
@@ -36,7 +36,7 @@ body{
 
 .search-box input{
     color: #06283D;
-    width: 100%;
+    width: 80%;
     font-size: 24px;
     font-weight: 500;
     text-transform: uppercase;
@@ -47,7 +47,7 @@ body{
     font-size: 20px;
     font-weight: 500;
     color: #06283D;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 .search-box button{
@@ -58,7 +58,7 @@ body{
     background: #dff6ff;
     border-radius: 50%;
     font-size: 22px;
-    transition: 0.4s, ease;
+    transition: 0.4s ease;
 }
 
 .search-box button:hover{
@@ -77,7 +77,7 @@ body{
 }
 
 .weather-box img{
-    width: 80%;
+    width: 60%;
     margin-top: 30px;
 }
 
@@ -92,15 +92,15 @@ body{
 
 .weather-box .temperature span{
     position: absolute;
-    font-size: 1.5rem;
     margin-left: 4px;
+    font-size: 1.5rem;
 }
 
 .weather-box .description{
     color: #06283D;
     font-size: 22px;
     font-weight: 500;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 .weather-details{
@@ -112,7 +112,7 @@ body{
 
 .weather-details .humidity, .weather-details .wind{
     display: flex;
-    align-content: center;
+    align-items: center;
     width: 50%;
     height: 100px;
 }
@@ -177,7 +177,7 @@ body{
 }
 
 @keyframes fadeIn{
-    to{
+    to {
         scale: 1;
         opacity: 1;
     }

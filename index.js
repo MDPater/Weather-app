@@ -6,17 +6,16 @@ const not_found = document.querySelector('.not-found');
 
 search.addEventListener('click', () =>{
 
-    const APIKey = 'f5f6921d11e8b4021137f05a67ffcb7c';
+    const APIKey = 'c5d7cf6b16a0577b398daf15f32a0055';
     const city = document.querySelector('.search-box input').value;
 
     if(city === '')
         return;
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q={city}&appid={APIKey}`)
-        .then(response => response.json())
-        .then(json => {
-            if(json.cod === '404'){
-                container.style.height = '400px';
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`).then(response => response.json()).then(json => {
+           
+        	if(json.cod === '404'){
+                container.style.height = '450px';
                 weather_box.style.display = 'none';
                 weather_details.style.display = 'none';
                 not_found.style.display = 'block';
@@ -33,7 +32,7 @@ search.addEventListener('click', () =>{
             const humidity = document.querySelector('.weather-details .humidity span');
             const wind = document.querySelector('.weather-details .wind span');
 
-            switch(json.weather[0].main){
+            switch (json.weather[0].main){
                 case 'Clear':
                     image.src = 'images/sun.png';
                     break;
@@ -67,4 +66,4 @@ search.addEventListener('click', () =>{
             container.style.height = '600px';
         });
 
-});
+})
