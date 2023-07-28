@@ -5,14 +5,19 @@ const weather_details = document.querySelector('.weather-details');
 const not_found = document.querySelector('.not-found');
 
 //when enter is pressed
-container.addEventListener('enter', () =>{
-
+container.addEventListener('keydown', (event) =>{
+    if(event.key === "Enter"){
+        call_api();
+    }
 })
 
 //on button click
 search.addEventListener('click', () =>{
+    call_api();
+})
 
-
+//call API and fetch json
+function call_api(){
     //OpenWeatherMap API Key
     const APIKey = 'c5d7cf6b16a0577b398daf15f32a0055';
     const city = document.querySelector('.search-box input').value;
@@ -79,10 +84,4 @@ search.addEventListener('click', () =>{
             weather_details.classList.add('fadeIn');
             container.style.height = '600px';
         });
-
-})
-
-//call API and fetch json
-function call_api(){
-
 }
